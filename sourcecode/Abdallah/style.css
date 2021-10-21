@@ -136,13 +136,13 @@ footer .icons a:hover i{
         padding: 0 3rem;
     }
     .contactme-container form label{
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     .contact-info p{
         font-size: 1.5rem;
     }
     .contact-info p:nth-child(1){
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
 }
