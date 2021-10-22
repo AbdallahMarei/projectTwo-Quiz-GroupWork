@@ -1,3 +1,8 @@
+:root {
+    --color-primary: #3ec1d5;
+    --color-secondary: #1c1f22;
+  }
+
 *{
     margin: 0;
     padding: 0;
@@ -14,8 +19,9 @@ html{
 
 .contactme{
     font-size: 2.5rem;
-    background-color: blanchedalmond;
+    background-color: var(--color-secondary);
     padding: 4rem 0;
+    color: white;
 }
 .contactme h2{
     text-align: center;
@@ -72,7 +78,7 @@ footer{
     align-items: center;
     font-size: 1.5rem;
     padding-top: 1.5rem;
-    background-color: cornsilk;
+    background-color: var(--color-primary);
 }
 .footer-links ul{
     list-style: none;
