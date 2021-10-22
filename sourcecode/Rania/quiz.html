@@ -118,6 +118,15 @@
         let hr = document.createElement("hr");
         container.appendChild(hr);
       }
-    }
+    //    for ( ) create radio button for the options
+
+    // increase the question counter
+    currentQuestion++;
+        if (currentQuestion == questionsObject.length) {
+          document.getElementById("btnsubmit").innerHTML = "Submit";
+        }
+      } else {
+        submitAnswers();
+      }
   </script>
 </html>
