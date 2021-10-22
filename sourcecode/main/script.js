@@ -1,25 +1,26 @@
-let username =document.forms["form"]["username"];
-let password =document.forms["form"]["password"];
-let confirmPassword = document.getElementById("passwordConfirm")
-let email =document.forms["form"]["email"];
-let isValid = true
 
-const loginForm = document.querySelector(".form-login");
-const loginButton = document.getElementById("login-btn");
-const loginInput = document.querySelector(".login-input");
+let password =document.querySelector("#login-pass");
+let confirmPassword = document.getElementById("passwordConfirm")
+let email =document.querySelector(".email-input")
+let isValid = true
+let welcomeHeading = document.getElementById("welcome-user");
+
+let loginForm = document.querySelector(".form-login");
+let loginButton = document.getElementById("login-btn");
+let loginInput = document.querySelector(".login-username");
 
 let validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 
 function validated(event){
     event.preventDefault();
-    if (username.value.length < 3){
-        username_error.style.display="block";
-        username.style.border="1px solid red"
+    if (loginInput.value.length < 3){
+        loginInput_error.style.display="block";
+        loginInput.style.border="1px solid red"
         isValid = false
     }else{
-        username_error.style.display="none";
-        username.style.border="1px solid silver"
+        loginInput_error.style.display="none";
+        loginInput.style.border="1px solid silver"
         isValid = true
     }
     
@@ -54,19 +55,22 @@ function validated(event){
     if (isValid == true){
         localStorage.setItem(`username ${loginInput.value}`, loginInput.value);
         window.location.href = "quiz.html";
-    }
+    } 
 }
 
 
-
 loginForm.addEventListener("submit", function(e) {
-     e.preventDefault();
-     if(loginInput.value === localStorage.getItem(`username ${loginInput.value}`)){
+    e.preventDefault();
+    if(loginInput.value === localStorage.getItem(`username ${loginInput.value}`)){
         window.location.href = "quiz.html";
-     }else{
-     alert("this username is not found, please register");
-     }     
+    }else{
+    alert("this username is not found, please register");
+    }     
 })
+
+welcomeHeading.innerHTML = "hello";
+
+
 
 
 
