@@ -255,8 +255,7 @@ footer .icons a:hover i {
   padding: 0 40px;
   font-size: 1.9rem;
 }
-.form-login {
-}
+
 .form-login input,
 .register-form input {
   width: 100%;
@@ -297,6 +296,25 @@ footer .icons a:hover i {
   color: rgb(240, 54, 54);
   display: none;
 }
+#login-welcome {
+  font-size: 4rem;
+  padding: 30% 0;
+  display: none;
+}
+#login-welcome a {
+  text-align: center;
+  cursor: pointer;
+  margin-top: 5rem;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 5em;
+  margin: 10px;
+  color: #fff;
+  background: #3ec1d5;
+}
 
 /* quiz-page */
 
@@ -324,10 +342,9 @@ footer .icons a:hover i {
   width: 100px;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
-
 
 @media screen and (max-width: 1024px) {
   .login-section {

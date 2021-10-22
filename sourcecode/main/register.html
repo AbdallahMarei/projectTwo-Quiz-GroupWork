@@ -52,25 +52,42 @@
     </header>
     <section class="register">
       <div class="login-section">
-        <div class="login-title"><h2>Register Form</h2></div>
-
-        <div class="cont">
-          <form class="register-form" method="post" name="form" onsubmit="validated(event)">
+        <div id="login-welcome">
+          <p id="welcome-name">Welcome</p>
+          <a href="quiz.html">Get Started</a>
+        </div>
+        <div class="cont" id="login">
+          <div class="login-title"><h2>Register Form</h2></div>
+          <form
+            class="register-form"
+            method="post"
+            name="form"
+            onsubmit="validated(event)"
+          >
             <div class="login-label"><label>UserName</label></div>
             <div>
-              <input type="text" class="login-input login-username" name="username" />
+              <input
+                type="text"
+                class="login-input login-username"
+                name="username"
+              />
             </div>
             <div id="username_error">Please fill up your UserName</div>
 
             <div class="email-label"><label>Email</label></div>
             <div>
-              <input class="email-input" name="email" />
+              <input class="email-input" name="email" type="email" />
             </div>
             <div id="email_error">Please fill up your Email</div>
 
             <div class="login-label"><label>Password </label></div>
             <div>
-              <input id="login-pass" class="login-input" type="password" name="password" />
+              <input
+                id="login-pass"
+                class="login-input"
+                type="password"
+                name="password"
+              />
             </div>
             <div id="pass_error">Please fill up your Password</div>
 
