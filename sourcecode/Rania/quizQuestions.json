@@ -1,0 +1,48 @@
+[{
+          "question":
+            "Question  1 : what is the programing language used to handle web page actions ",
+          "options": [
+            { "number": 1, "value": "javascript" },
+            { "number": 2, "value": "c#" },
+            { "number": 3, "value": "Java" } 
+          ],
+          "correctAnswer": 1 
+        },
+        {
+          "Question": " question  2: what is the UI markup language design ",
+          "options": [
+            { "number": 1, "value": "javascript" },
+            { "number": 2, "value": "Css" },
+            { "number": 3, "value": "HTML" } 
+          ],
+          "correctAnswer": 3} ,
+        {
+          "Question": "question 3 : what is the programing language from below ",
+          "options": [
+            { "number": 1, "value": "HTMl" },
+            { "number": 2, "value": "c#" },
+            { "number": 3, "value": "CSS" } 
+          ],
+          "correctAnswer": 2 
+        },
+        {
+          "question":
+            "Question  4 : what is the programing language used to handle web page actions ",
+          "options": [
+            { "number": 1, "value": "javascript" },
+            { "number": 2, "value": "c#" },
+            { "number": 3, "value": "Java" } 
+          ],
+          "correctAnswer": 1 
+        },
+        {
+          "question":
+            "Question  5 : what is the programing language used to handle web page actions ",
+          "options": [
+            { "number": 1, "value": "javascript" },
+            { "number": 2, "value": "c#" },
+            { "number": 3, "value": "Java" } 
+          ],
+          "correctAnswer": 1 
+        }
+      ]

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="quizQuestions.json"></script>
+    <style>
+      .question-div {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
+      .radio-container {
+        font-size: 1em;
+        font-weight: bold;
+        padding: 3px;
+        border-radius: 4px;
+        margin: 5px;
+        background-color: #fff;
+      }
+
+      .button {
+        padding: 5px;
+        background-color: #ddd;
+        width: 8em;
+        text-align: center;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 1em;
+      }
+
+      .question-div {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+      }
+
+      .question-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 60%;
+        margin: auto;
+        height: 100vh;
+      }
+
+      div#question-container {
+        background-color: #ddd;
+        padding: 1.2em;
+        border-radius: 7px;
+      }
+
+      .validation-message {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="question-section">
+      <div id="question-container"></div>
+      <div class="validation-message" id="validationMessage" hidden>
+        Please answer the question before proceed
+      </div>
+
+      <div class="button" onclick="GotToNextStep()">Next</div>
+    </div>
+  </body>
+
+  <script>
+    // global objects
+    let questionsObject = [];
+    let currentQuestion = 0;
+    let currentAnswerNumber = -1;
+    defineQuizJson();
+
+    function defineQuizJson() {
+      var httpRequest = new XMLHttpRequest();
+      httpRequest.onreadystatechange = function () {
+        if (httpRequest.readyState === 4) {
+          if (httpRequest.status === 200) {
+            let data = JSON.parse(httpRequest.responseText);
+            /// this is a block inside a block so we sent the data
+            startGenerateQuestions(data);
+            // console.log(data);
+          }
+        }
+      };
+      httpRequest.open("GET", "quizQuestions.json");
+      httpRequest.send();
+    }
+
+    function startGenerateQuestions(data) {
+      questionsObject = data;
+      //Generate Next Question
+      generateNextQuestion();
+    }
+
+    function generateNextQuestion() {
+      // clear the contant of the question container
+      let container = document.getElementById("question-container");
+      container.innerHTML = "";
+
+      // reset the answer parameter
+      currentAnswerNumber = -1;
+
+      // check if we reached the last question.
+      if (currentQuestion < questionsObject.length) {
+        // generate the question.
+        console.log(questionsObject[currentQuestion].question);
+        let divQuestion = document.createElement("div");
+        divQuestion.classList.add("question-div");
+        divQuestion.innerHTML = questionsObject[currentQuestion].question;
+        let container = document.getElementById("question-container");
+        container.appendChild(divQuestion);
+        let hr = document.createElement("hr");
+        container.appendChild(hr);
+      }
+    }
+  </script>
+</html>
