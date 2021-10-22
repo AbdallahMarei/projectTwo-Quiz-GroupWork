@@ -65,7 +65,7 @@
         Please answer the question before proceed
       </div>
 
-      <div class="button" onclick="GotToNextStep()">Next</div>
+      <div class="button" onclick="GotToNextStep()" id="btnsubmit">Next</div>
     </div>
   </body>
 
@@ -74,6 +74,7 @@
     let questionsObject = [];
     let currentQuestion = 0;
     let currentAnswerNumber = -1;
+
     defineQuizJson();
 
     function defineQuizJson() {
@@ -82,9 +83,8 @@
         if (httpRequest.readyState === 4) {
           if (httpRequest.status === 200) {
             let data = JSON.parse(httpRequest.responseText);
-            /// this is a block inside a block so we sent the data
+
             startGenerateQuestions(data);
-            // console.log(data);
           }
         }
       };
@@ -94,21 +94,15 @@
 
     function startGenerateQuestions(data) {
       questionsObject = data;
-      //Generate Next Question
+
       generateNextQuestion();
     }
 
     function generateNextQuestion() {
-      // clear the contant of the question container
       let container = document.getElementById("question-container");
       container.innerHTML = "";
 
-      // reset the answer parameter
-      currentAnswerNumber = -1;
-
-      // check if we reached the last question.
       if (currentQuestion < questionsObject.length) {
-        // generate the question.
         console.log(questionsObject[currentQuestion].question);
         let divQuestion = document.createElement("div");
         divQuestion.classList.add("question-div");
@@ -117,30 +111,68 @@
         container.appendChild(divQuestion);
         let hr = document.createElement("hr");
         container.appendChild(hr);
-      }
-      //    for ( ) create radio button for the options
+        for (
+          let index = 0;
+          index < questionsObject[currentQuestion].options.length;
+          index++
+        ) {
+          const element = questionsObject[currentQuestion].options[index];
+          let radio = document.createElement("input");
 
-      // increase the question counter
-      for (
-        let index = 0;
-        index < questionsObject[currentQuestion].options.length;
-        index++
-      ) {
-        const element = questionsObject[currentQuestion].options[index];
-        let radio = document.createElement("input");
-        radio.setAttribute("type", "radio");
-        radio.setAttribute("name", "option");
-        radio.setAttribute("onclick", "registerAnswer()");
+          radio.setAttribute("type", "radio");
+          radio.setAttribute("name", "option");
+          radio.setAttribute("data-optionvalue", element.number);
+          radio.setAttribute("onclick", "registerAnswer()");
+          let radioContainerDiv = document.createElement("div");
+          radioContainerDiv.classList.add("radio-container");
+          radioContainerDiv.appendChild(radio);
 
-        //complete the radio button
+          let label = document.createElement("label");
+          label.innerHTML = element.value;
+          radioContainerDiv.appendChild(label);
+          container.appendChild(radioContainerDiv);
+        }
+
         currentQuestion++;
-      }
-      if (currentQuestion == questionsObject.length) {
-        document.getElementById("btnsubmit").innerHTML = "Submit";
+        if (currentQuestion == questionsObject.length) {
+          document.getElementById("btnsubmit").innerHTML = "Submit";
+        }
+      } else {
+        submitAnswers();
       }
     }
 
-    //call the function
-    function registerAnswer() {}
+    function registerAnswer() {
+      document
+        .getElementById("validationMessage")
+        .setAttribute("hidden", "true");
+      console.log(
+        "question answered" +
+          event.currentTarget.getAttribute("data-optionvalue")
+      );
+      currentAnswerNumber =
+        event.currentTarget.getAttribute("data-optionvalue");
+    }
+
+    function submitAnswers() {
+      console.log("all questions answered");
+      console.log(answersArray);
+      localStorage.setItem("answers", JSON.stringify(answersArray));
+    }
+    function GotToNextStep() {
+      if (currentAnswerNumber >= 0) {
+        AddToAnswersArray();
+        generateNextQuestion();
+      } else {
+        document.getElementById("validationMessage").removeAttribute("hidden");
+      }
+    }
+
+    let answersArray = [];
+    function AddToAnswersArray() {
+      // if (radio.checked) {
+      //   answersArray.push("this.radio");
+      // }
+    }
   </script>
 </html>

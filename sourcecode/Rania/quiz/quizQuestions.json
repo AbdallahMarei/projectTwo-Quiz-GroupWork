@@ -9,7 +9,7 @@
           "correctAnswer": 1 
         },
         {
-          "Question": " question  2: what is the UI markup language design ",
+          "question": " question  2: what is the UI markup language design ",
           "options": [
             { "number": 1, "value": "javascript" },
             { "number": 2, "value": "Css" },
@@ -17,7 +17,7 @@
           ],
           "correctAnswer": 3} ,
         {
-          "Question": "question 3 : what is the programing language from below ",
+          "question": "question 3 : what is the programing language from below ",
           "options": [
             { "number": 1, "value": "HTMl" },
             { "number": 2, "value": "c#" },
