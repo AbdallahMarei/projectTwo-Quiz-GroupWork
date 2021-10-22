@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -20,84 +20,129 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Quiz Page</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="#"><img src="images/logo.png" /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarText"
-            aria-controls="navbarText"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav ml-auto navbar-links">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src="images/logo.png" /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav ml-auto navbar-links">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-      <main>
-        <section id="quiz-page">
-            <div class="quiz-container">
-                <h1 id="welcome-user">Welcome</h1>
-                <form class="questions-form" action="" method="get" id="form">
-                    <h2 id="Question">Test Question</h2>
-                    <label id="one" for="a">test</label><input 
-                    type="radio" name="Q" id="a" />
-                    <label id="two" for="b">test</label>
-                    <input
-                    type="radio" name="Q" id="b" />
-                    <label id="three" for="c">test</label>
-                    <input
-                    type="radio" name="Q" required id="c" />
-                    <label id="four" for="d">test</label>
-                    <input type="radio" name="Q" id="d" />
-                    <input class="next-button" type="submit" value="next" />
-                  </form>
-                <button id="start-button" type="button" class="btn btn-primary">
-                    <strong>Start</strong>
-                  </button>
+    <main>
+      <section id="quiz-page">
+        <div class="quiz-container">
+          <h1 id="welcome-user">Welcome</h1>
+          <form class="questions-form" action="" method="get" id="form">
+            <h2 id="Question">Test Question</h2>
+            <div>
+              <label id="one" for="a">test</label
+              ><input type="radio" name="Q" id="a" />
+            </div>
+            <div>
+              <label id="two" for="b">test</label>
+              <input type="radio" name="Q" id="b" />
+            </div>
+            <div>
+              <label id="three" for="c">test</label>
+              <input type="radio" name="Q" required id="c" />
+            </div>
+            <div>
+              <label id="four" for="d">test</label>
+              <input type="radio" name="Q" id="d" />
             </div>
 
-            
-
-        </section>
-      </main>
-
+            <input class="next-button" type="submit" value="next" />
+          </form>
+          <button id="start-button" type="button" class="btn btn-primary">
+            <strong>Start</strong>
+          </button>
+        </div>
+      </section>
+    </main>
 
     <footer>
-        <div class="footer-links">
-            <ul>
-                <li><a href="#home-page">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-        <div class="icons">
-            <a href="https://www.linkedin.com/in/abdallah-marei/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/AbdallahMarei" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.facebook.com/abdullah.mari" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        </div>
-        <p>&copy Copyright 2021. Made by eCHO</p>
+      <div class="footer-links">
+        <ul>
+          <li><a href="#home-page">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="icons">
+        <a href="https://www.linkedin.com/in/abdallah-marei/" target="_blank"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a href="https://github.com/AbdallahMarei" target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://www.facebook.com/abdullah.mari" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+      </div>
+      <p>&copy Copyright 2021. Made by eCHO</p>
     </footer>
+    <script>
+      //send answer with id parameter from radio to script
+      let arr = [
+        { name: "Question one", A1: "A", A2: "B", A3: "f", A4: "t" },
+        { name: "Question Two", A1: "B", A2: "dsc", A3: "cc", A4: "t" },
+        { name: "Question three", A1: "B", A2: "B", A3: "f", A4: "t" },
+      ];
+      let answers = [];
 
+      let questionNumber = 0;
+      function logSubmit(event) {
+        for (let i = 0; i < arr.length; i++) {
+          if (questionNumber == i) {
+            document.getElementById("Question").innerHTML = arr[i].name;
+            document.getElementById("one").innerHTML = arr[i].A1;
+            document.getElementById("two").innerHTML = arr[i].A2;
+            document.getElementById("three").innerHTML = arr[i].A3;
+            document.getElementById("four").innerHTML = arr[i].A4;
+          }
+        }
+        // arr.forEach(item, function () {
+        //   console.log(item);
+        //   if (questionNumber == item) {
+        //     document.getElementById("Question").innerHTML = arr[item].name;
+        //     document.getElementById("one").innerHTML = arr[item].A1;
+        //     document.getElementById("two").innerHTML = arr[item].A2;
+        //     document.getElementById("three").innerHTML = arr[item].A3;
+        //     document.getElementById("four").innerHTML = arr[item].A4;
+        //   }
+        // });
+        questionNumber++;
+        event.preventDefault();
+      }
 
+      const form = document.getElementById("form");
+      // const log = document.getElementById("log");
+      form.addEventListener("submit", logSubmit);
+    </script>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -109,7 +154,7 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
-  
+
     <script src="scriptquiz.js"></script>
-</body>
+  </body>
 </html>
