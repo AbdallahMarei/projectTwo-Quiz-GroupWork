@@ -49,8 +49,11 @@ nav .active a {
   color: whitesmoke;
   text-align: center;
 }
+.background div h1 {
+  font-size: 4rem !important;
+}
 .background div p {
-  font-size: 1.5em;
+  font-size: 2.5rem;
 }
 .background div a {
   font-weight: 500;
