@@ -297,6 +297,34 @@ input {
   color: rgb(240, 54, 54);
   display: none;
 }
+
+/* quiz-page */
+
+.quiz-container{
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.questions-form{
+  font-size: 2rem;
+  width: 60%;
+}
+.questions-form input[type = "radio"]{
+  width: 2%;
+}
+.next-button{
+    width:10%;
+}
+#start-button{
+  width: 10%;
+
+}
+
+
+
 @media screen and (max-width: 1024px) {
   .login-section {
     width: unset;

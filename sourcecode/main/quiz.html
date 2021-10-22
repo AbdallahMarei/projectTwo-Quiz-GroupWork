@@ -39,13 +39,13 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav ml-auto navbar-links">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home </a>
+                <a class="nav-link" href="index.html">Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="index.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="index.html">Contact</a>
               </li>
             </ul>
           </div>
@@ -54,7 +54,29 @@
 
       <main>
         <section id="quiz-page">
-            <h1 id="welcome-user"></h1>
+            <div class="quiz-container">
+                <h1 id="welcome-user">Welcome</h1>
+                <form class="questions-form" action="" method="get" id="form">
+                    <h2 id="Question">Test Question</h2>
+                    <label id="one" for="a">test</label><input 
+                    type="radio" name="Q" id="a" />
+                    <label id="two" for="b">test</label>
+                    <input
+                    type="radio" name="Q" id="b" />
+                    <label id="three" for="c">test</label>
+                    <input
+                    type="radio" name="Q" required id="c" />
+                    <label id="four" for="d">test</label>
+                    <input type="radio" name="Q" id="d" />
+                    <input class="next-button" type="submit" value="next" />
+                  </form>
+                <button id="start-button" type="button" class="btn btn-primary">
+                    <strong>Start</strong>
+                  </button>
+            </div>
+
+            
+
         </section>
       </main>
 
@@ -88,6 +110,6 @@
       crossorigin="anonymous"
     ></script>
   
-    <script src="script.js"></script>
+    <script src="scriptquiz.js"></script>
 </body>
 </html>

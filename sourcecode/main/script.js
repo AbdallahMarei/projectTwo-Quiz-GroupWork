@@ -4,6 +4,10 @@ let confirmPassword = document.getElementById("passwordConfirm")
 let email =document.querySelector(".email-input")
 let isValid = true
 let welcomeHeading = document.getElementById("welcome-user");
+let loginInput_error = document.querySelector("#username_error");
+let email_error = document.querySelector("#email_error");
+let pass_error = document.querySelector("#pass_error");
+let confirm_error = document.querySelector("#confirm_error");
 
 let loginForm = document.querySelector(".form-login");
 let loginButton = document.getElementById("login-btn");
@@ -11,6 +15,7 @@ let loginInput = document.querySelector(".login-username");
 
 let validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+let users = [];
 
 function validated(event){
     event.preventDefault();
@@ -58,19 +63,13 @@ function validated(event){
     } 
 }
 
-
-loginForm.addEventListener("submit", function(e) {
+ loginForm.addEventListener("submit", function(e) {
     e.preventDefault();
     if(loginInput.value === localStorage.getItem(`username ${loginInput.value}`)){
         window.location.href = "quiz.html";
     }else{
     alert("this username is not found, please register");
-    }     
+    }  
 })
-
-welcomeHeading.innerHTML = "hello";
-
-
-
 
 
