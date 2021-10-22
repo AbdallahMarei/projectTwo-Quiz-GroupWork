@@ -118,15 +118,29 @@
         let hr = document.createElement("hr");
         container.appendChild(hr);
       }
-    //    for ( ) create radio button for the options
+      //    for ( ) create radio button for the options
 
-    // increase the question counter
-    currentQuestion++;
-        if (currentQuestion == questionsObject.length) {
-          document.getElementById("btnsubmit").innerHTML = "Submit";
-        }
-      } else {
-        submitAnswers();
+      // increase the question counter
+      for (
+        let index = 0;
+        index < questionsObject[currentQuestion].options.length;
+        index++
+      ) {
+        const element = questionsObject[currentQuestion].options[index];
+        let radio = document.createElement("input");
+        radio.setAttribute("type", "radio");
+        radio.setAttribute("name", "option");
+        radio.setAttribute("onclick", "registerAnswer()");
+
+        //complete the radio button
+        currentQuestion++;
       }
+      if (currentQuestion == questionsObject.length) {
+        document.getElementById("btnsubmit").innerHTML = "Submit";
+      }
+    }
+
+    //call the function
+    function registerAnswer() {}
   </script>
 </html>
