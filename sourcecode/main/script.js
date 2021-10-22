@@ -17,6 +17,7 @@ let validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
 
 let users = [];
 
+
 function validated(event){
     event.preventDefault();
     if (loginInput.value.length < 3){
@@ -58,18 +59,23 @@ function validated(event){
         confirmPassword.style.border="1px solid silver"
     }
     if (isValid == true){
-        localStorage.setItem(`username ${loginInput.value}`, loginInput.value);
-        window.location.href = "quiz.html";
+        users.push(loginInput.value);
+        localStorage.setItem("users", JSON.stringify(users))
+        window.location = "quiz.html";
     } 
 }
+console.log(localStorage);
+
 
  loginForm.addEventListener("submit", function(e) {
     e.preventDefault();
-    if(loginInput.value === localStorage.getItem(`username ${loginInput.value}`)){
-        window.location.href = "quiz.html";
+    if(JSON.parse(localStorage.getItem("users")).includes(`${loginInput.value}`)){
+        window.location = "quiz.html";
     }else{
     alert("this username is not found, please register");
     }  
 })
+
+
 
 

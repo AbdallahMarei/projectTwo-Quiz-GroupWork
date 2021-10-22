@@ -56,26 +56,23 @@
       <section id="quiz-page">
         <div class="quiz-container">
           <h1 id="welcome-user">Welcome</h1>
-          <form class="questions-form" action="" method="get" id="form">
+          <form class="questions-form hidden" action="" method="get" id="form">
             <h2 id="Question">Test Question</h2>
             <div>
               <label id="one" for="a">test</label
-              ><input type="radio" name="Q" id="a" />
+              ><input type="radio" name="Q" id="a" value=""/> 
             </div>
             <div>
               <label id="two" for="b">test</label>
-              <input type="radio" name="Q" id="b" />
+              <input type="radio" name="Q" id="b" value=""/>
             </div>
             <div>
               <label id="three" for="c">test</label>
-              <input type="radio" name="Q" required id="c" />
-            </div>
-            <div>
-              <label id="four" for="d">test</label>
-              <input type="radio" name="Q" id="d" />
+              <input type="radio" name="Q" required id="c" value=""/>
             </div>
 
-            <input class="next-button" type="submit" value="next" />
+            <input class="next-button" type="submit" value="Next" />
+            <input class="submit-button hidden" type="submit" value="Submit" />
           </form>
           <button id="start-button" type="button" class="btn btn-primary">
             <strong>Start</strong>
@@ -106,42 +103,122 @@
       <p>&copy Copyright 2021. Made by eCHO</p>
     </footer>
     <script>
+
+    // startbutton
+
+     let startButton = document.querySelector("#start-button");
+     let questionForm = document.querySelector(".questions-form");
+     let nextButton = document.querySelector(".next-button");
+     let submitButton = document.querySelector(".submit-button");
+     let radioButton = document.getElementsByName("Q");
+
+
+
+    startButton.addEventListener("click", function(){
+        questionForm.classList.remove("hidden");
+        startButton.classList.add("hidden");
+        logSubmit(event)
+    })
+
+
       //send answer with id parameter from radio to script
-      let arr = [
-        { name: "Question one", A1: "A", A2: "B", A3: "f", A4: "t" },
-        { name: "Question Two", A1: "B", A2: "dsc", A3: "cc", A4: "t" },
-        { name: "Question three", A1: "B", A2: "B", A3: "f", A4: "t" },
+      let questions = [
+          {
+          question:
+            "Question  1 : what is the programing language used to handle web page actions ?",
+          options: 
+            {  a: "javascript" ,
+              b: "C#" ,
+             c: "Java" } ,
+          correctAnswer: "a" 
+        },
+        {
+            question:
+            "Question  2 : what is the UI markup language design ?",
+          options: 
+            {  a: "javascript" ,
+              b: "CSS" ,
+             c: "HTML" } ,
+          correctAnswer: "c" 
+        }
+        ,{
+            question:
+            "Question 3 : what is the programing language from below ?",
+          options: 
+            {  a: "HTML" ,
+              b: "C#" ,
+             c: "CSS" } ,
+          correctAnswer: "b" 
+        },
+        {
+            question:
+            "Question  4 : what is the programing language used to handle web page actions ?",
+          options: 
+            {  a: "javascript" ,
+              b: "C#" ,
+             c: "Java" } ,
+          correctAnswer: "a" 
+        },
+        {
+            question:
+            "Question  5 : what is the programing language used to handle web page actions ?",
+          options: 
+            {  a: "javascript" ,
+              b: "C#" ,
+             c: "Java" } ,
+          correctAnswer: "a" 
+        }
       ];
       let answers = [];
+      let chosenAnswers = [];
 
       let questionNumber = 0;
-      function logSubmit(event) {
-        for (let i = 0; i < arr.length; i++) {
-          if (questionNumber == i) {
-            document.getElementById("Question").innerHTML = arr[i].name;
-            document.getElementById("one").innerHTML = arr[i].A1;
-            document.getElementById("two").innerHTML = arr[i].A2;
-            document.getElementById("three").innerHTML = arr[i].A3;
-            document.getElementById("four").innerHTML = arr[i].A4;
+      async function logSubmit(event) {
+          if(questionNumber === questions.length - 1){
+               nextButton.classList.add("hidden");
+               submitButton.classList.remove("hidden");
           }
-        }
-        // arr.forEach(item, function () {
-        //   console.log(item);
-        //   if (questionNumber == item) {
-        //     document.getElementById("Question").innerHTML = arr[item].name;
-        //     document.getElementById("one").innerHTML = arr[item].A1;
-        //     document.getElementById("two").innerHTML = arr[item].A2;
-        //     document.getElementById("three").innerHTML = arr[item].A3;
-        //     document.getElementById("four").innerHTML = arr[item].A4;
-        //   }
-        // });
+        
+        questions.forEach((item, index) => {
+          form.reset()
+          if (questionNumber == index) {
+            document.getElementById("Question").innerHTML = item.question;
+            document.getElementById("one").innerHTML = item.options.a;
+            document.getElementById("two").innerHTML = item.options.b;
+            document.getElementById("three").innerHTML = item.options.c;
+            
+            radioButton[0].value = item.options.a;
+            radioButton[1].value = item.options.b;
+            radioButton[2].value = item.options.c;
+            radioButton.forEach((item) =>{
+              if(item.checked){
+                answers.push(item.value)
+              }
+            })
+            console.log(answers);
+          }
+          
+        });
         questionNumber++;
         event.preventDefault();
       }
+      
+      submitButton.addEventListener("click", function(){
+          radioButton.forEach((item) => {
+             if(item.checked){
+                window.location.href = "result.html"
+             }
+          
+          })
+          
+      })
 
+ 
       const form = document.getElementById("form");
       // const log = document.getElementById("log");
-      form.addEventListener("submit", logSubmit);
+      form.addEventListener("submit", () => {
+        logSubmit(event)
+    })
     </script>
 
     <script

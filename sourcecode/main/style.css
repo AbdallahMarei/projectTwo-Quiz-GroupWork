@@ -324,6 +324,11 @@ footer .icons a:hover i {
   width: 100px;
 }
 
+.hidden{
+  display: none;
+}
+
+
 @media screen and (max-width: 1024px) {
   .login-section {
     width: unset;
