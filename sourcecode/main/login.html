@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Shahed/style.css" />
+    <title>login</title>
+  </head>
+  <body>
+    <section class="login">
+      <div class="login1-section">
+        <div class="login-title"><h2>Login Form</h2></div>
+
+        <div class="cont">
+          <form method="post" name="form" onsubmit="return validated(event)">
+            <div class="login-label"><label>UserName</label></div>
+            <div>
+              <input type="text" class="login-input" name="username" />
+            </div>
+            <div id="username_error">Please fill up your UserName</div>
+
+            <div class="login-label"><label>Password </label></div>
+            <div>
+              <input class="login-input" type="password" name="password" />
+            </div>
+            <div id="pass_error">Please fill up your Password</div>
+
+            <div>
+              <input class="login-submit" type="submit" value="login" />
+            </div>
+          </form>
+          <div>
+            <p class="login-sign">Not a member? <a href="">Signup now </a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
