@@ -170,7 +170,6 @@ footer .icons a:hover i {
   transform: scale(1.3);
 }
 
-
 /* login */
 
 .login {
@@ -183,9 +182,19 @@ footer .icons a:hover i {
     var(--color-secondary)
   );
   height: 100vh;
- 
 }
 
+.register {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background: -webkit-linear-gradient(
+    right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  height: 100vh;
+}
 .login-section {
   width: 30%;
   height: 92vh;
@@ -195,7 +204,6 @@ footer .icons a:hover i {
   margin: auto auto;
   align-self: center;
   border-radius: 10px;
-  
 }
 .login1-section {
   width: 30%;
@@ -224,8 +232,7 @@ footer .icons a:hover i {
   padding: 0 40px;
   font-size: 1.9rem;
 }
-.form-login{
-
+.form-login {
 }
 input {
   width: 100%;
@@ -271,8 +278,11 @@ input {
     width: unset;
     height: unset;
   }
-  .login{
-    height: 200vh;
+  .register {
+    height: unset;
+  }
+  .login1-section {
+    width: unset;
   }
 }
 @media screen and (max-width: 320px) {
@@ -283,7 +293,6 @@ input {
     font-size: 2.9rem;
   }
 }
-
 
 /* media */
 
