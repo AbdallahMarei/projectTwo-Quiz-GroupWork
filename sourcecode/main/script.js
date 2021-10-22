@@ -4,6 +4,10 @@ let confirmPassword = document.getElementById("passwordConfirm")
 let email =document.forms["form"]["email"];
 let isValid = true
 
+const loginForm = document.querySelector(".form-login");
+const loginButton = document.getElementById("login-btn");
+const loginInput = document.querySelector(".login-input");
+
 let validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 
@@ -48,6 +52,21 @@ function validated(event){
         confirmPassword.style.border="1px solid silver"
     }
     if (isValid == true){
-        location.replace("/home.html")
+        localStorage.setItem(`username ${loginInput.value}`, loginInput.value);
+        window.location.href = "quiz.html";
     }
 }
+
+
+
+loginForm.addEventListener("submit", function(e) {
+     e.preventDefault();
+     if(loginInput.value === localStorage.getItem(`username ${loginInput.value}`)){
+        window.location.href = "quiz.html";
+     }else{
+     alert("this username is not found, please register");
+     }     
+})
+
+
+
