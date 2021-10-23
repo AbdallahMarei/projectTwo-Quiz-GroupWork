@@ -366,6 +366,55 @@ footer .icons a:hover i {
     font-size: 2.9rem;
   }
 }
+/* Style quiz : to be edited  */
+.question-div {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.radio-container {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 3px;
+  border-radius: 4px;
+  margin: 5px;
+  background-color: #fff;
+}
+
+.button {
+  padding: 5px;
+  background-color: #ddd;
+  width: 8em;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.question-div {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.question-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  margin: auto;
+  height: 100vh;
+}
+
+div#question-container {
+  background-color: #ddd;
+  padding: 1.2em;
+  border-radius: 7px;
+}
+
+.validation-message {
+  color: red;
+}
 
 /* media */
 
