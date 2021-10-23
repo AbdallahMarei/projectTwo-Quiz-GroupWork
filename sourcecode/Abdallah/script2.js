@@ -98,15 +98,16 @@ nextBtn.addEventListener('click', () => {
            loadQuiz()
        } else {
            quiz.innerHTML = `
-           <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+           <h2>Well done you finished the quiz, click on Show Results to see your results.</h2>
  
-           <button onclick="showResults()">Submit</button>
+           <button onclick="showResults()">Show Results</button>
            `
        }
     }
 })
 
 function showResults(){
-    localStorage.setItem("results", JSON.stringify(chosenAnswers));
+   localStorage.setItem("results", JSON.stringify(chosenAnswers));
+   localStorage.setItem("score", JSON.stringify(score));
    window.location = "result.html";
 }
