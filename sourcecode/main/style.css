@@ -361,12 +361,13 @@ footer .icons a:hover i {
   margin: 0;
 }
 .question-section {
-  background-color: #ddd;
+  background-color: rgb(250, 245, 245);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 60%;
+  width: 50%;
   margin: auto;
+  border-radius: 2rem;
 }
 
 .question-div {
@@ -381,6 +382,7 @@ footer .icons a:hover i {
   border-radius: 4px;
   margin: 5px;
   background-color: #fff;
+  border-radius: 2rem;
 }
 
 .next-button {
