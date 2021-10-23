@@ -324,36 +324,6 @@ footer .icons a:hover i {
   text-decoration: none;
 }
 
-/* quiz-page */
-
-.quiz-container {
-  display: flex;
-  flex-direction: column;
-  font-size: 2rem;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-}
-.questions-form div {
-  font-size: 2rem;
-  width: 60%;
-  display: inline-block;
-}
-
-.questions-form input[type="radio"] {
-  width: 20px;
-}
-.next-button {
-  width: 100px;
-}
-#start-button {
-  width: 100px;
-}
-
-.hidden {
-  display: none;
-}
-
 @media screen and (max-width: 1024px) {
   .login-section {
     width: unset;
@@ -374,7 +344,31 @@ footer .icons a:hover i {
     font-size: 2.9rem;
   }
 }
-/* Style quiz : to be edited  */
+/* Quiz page style  */
+.quiz {
+  background: -webkit-linear-gradient(
+    right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+.question-section {
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  margin: auto;
+}
+
 .question-div {
   font-weight: bold;
   font-size: 1.2em;
@@ -383,20 +377,29 @@ footer .icons a:hover i {
 .radio-container {
   font-size: 1em;
   font-weight: bold;
-  padding: 3px;
+  padding: 1.5rem;
   border-radius: 4px;
   margin: 5px;
   background-color: #fff;
 }
 
-.button {
+.next-button {
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  display: inline-block;
   padding: 5px;
-  background-color: #ddd;
-  width: 8em;
+  border-radius: 5em;
+  color: #fff;
+  background: #3ec1d5;
+  width: 8rem;
   text-align: center;
-  border-radius: 5px;
-  font-weight: bold;
-  margin-top: 1em;
+  margin: 2rem;
+  cursor: pointer;
+}
+.next-button:hover {
+  cursor: pointer;
+  background-color: #38a9bb;
 }
 
 .question-div {
@@ -405,19 +408,11 @@ footer .icons a:hover i {
   margin-bottom: 0.5em;
 }
 
-.question-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 60%;
-  margin: auto;
-  height: 100vh;
-}
-
 div#question-container {
-  background-color: #ddd;
   padding: 1.2em;
   border-radius: 7px;
+  font-size: 1.5rem;
+  color: #444;
 }
 
 .validation-message {
