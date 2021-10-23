@@ -182,7 +182,7 @@
     function AddToAnswersArray() {
       let lastAnswerQuestionIndex = currentQuestion - 1;
       let answerObject = {
-        questionNumber: currentQuestion,
+        questionIndex: lastAnswerQuestionIndex,
         correctAnswer: questionsObject[lastAnswerQuestionIndex].correctAnswer,
         userAnswer: currentAnswerNumber,
       };
