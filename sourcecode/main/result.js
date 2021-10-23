@@ -34,20 +34,19 @@ function myResults() {
   console.log(correctAnswerCounter);
   console.log(wrongAnswerCounter);
   let passExam = answersfromJson.length / 2;
+  let correct = document.getElementById("correct");
+  let wrong = document.getElementById("wrong");
   console.log(passExam);
   if (correctAnswerCounter >= passExam) {
-    document.getElementById("resultContainer").style.backgroundColor = "green";
-    document.getElementById("resultContainer").innerHTML = "You passed";
-    document.getElementById("btnShowAnswer").style.display = "block";
+   correct.style.display="block"
   } else {
-    document.getElementById("resultContainer").style.backgroundColor = "red";
-    document.getElementById("resultContainer").innerHTML = "You Failed";
-    document.getElementById("btnShowAnswer").style.display = "block";
+   wrong.style.display="block"
   }
 }
 
 let resultsTable = document.querySelector(".results-table")
 function showAnswers() {
+  document.getElementById("btnShowAnswer").style.display="none"
   if(resultsTable.innerHTML = " "){
   let userAnswers = JSON.parse(localStorage.getItem("answers"));
   console.log(userAnswers);

@@ -53,16 +53,28 @@
         </div>
       </nav>
     </header>
+    <div class="result-cont">
+      <div class="result">
+        <div class="container" id="resultContainer"></div>
 
-    <div class="container" id="resultContainer"></div>
-    <div class="button" id="btnShowAnswer" onclick="showAnswers()">
-      Show Answer
+        <div id="correct">
+          <div>Congratulations You Passed</div>
+          <img src="/sourcecode/main/images/correct1.png" alt="correct" />
+        </div>
+        <div id="wrong">
+          <div>Sorry You Failed</div>
+          <img src="/sourcecode/main/images/Red_x.svg.png" alt="" />
+        </div>
+
+        <div class="over-flow">
+          <table class="results-table"></table>
+        </div>
+
+        <div class="button" id="btnShowAnswer" onclick="showAnswers()">
+          <button>Show Answer</button>
+        </div>
+      </div>
     </div>
-
-    <table class="results-table">
-      
-    </table>
-
     <footer>
       <div class="footer-links">
         <ul>
