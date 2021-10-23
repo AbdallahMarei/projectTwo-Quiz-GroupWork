@@ -19,30 +19,35 @@ function validated(event) {
   if (loginInput.value.length < 3) {
     loginInput_error.style.display = "block";
     loginInput.style.border = "1px solid red";
-    isValid = false;
+
   } else {
     loginInput_error.style.display = "none";
     loginInput.style.border = "1px solid silver";
-    isValid = true;
+   
   }
 
   if (password.value.length < 6) {
     pass_error.style.display = "block";
     password.style.border = "1px solid red";
-    isValid = false;
+ 
   } else {
     pass_error.style.display = "none";
     password.style.border = "1px solid silver";
-    isValid = true;
+   
   }
 
   if (confirmPassword.value !== password.value) {
     confirm_error.style.display = "block";
     confirmPassword.style.border = "1px solid red";
-    isValid = false;
+   
   } else {
     confirm_error.style.display = "none";
     confirmPassword.style.border = "1px solid silver";
+  }
+  if(confirmPassword.value !== password.value || password.value.length < 6 ||loginInput.value.length < 3){
+    isValid = false
+  }else{
+    isValid = true
   }
   if (isValid == true) {
     //object contains the username and password given from the register form
