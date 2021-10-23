@@ -12,9 +12,6 @@ let loginForm = document.querySelector(".form-login");
 let loginButton = document.getElementById("login-btn");
 let loginInput = document.querySelector(".login-username");
 
-// let validEmail =
-//   "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/";
-
 let users = [];
 
 function validated(event) {
@@ -29,15 +26,6 @@ function validated(event) {
     isValid = true;
   }
 
-  // if (!email.value.match(validEmail)) {
-  //   email_error.style.display = "block";
-  //   email.style.border = "1px solid red";
-  //   isValid = false;
-  // } else {
-  //   email_error.style.display = "none";
-  //   email.style.border = "1px solid silver";
-  //   isValid = true;
-  // }
   if (password.value.length < 6) {
     pass_error.style.display = "block";
     password.style.border = "1px solid red";
@@ -60,7 +48,7 @@ function validated(event) {
     localStorage.setItem(`username ${loginInput.value}`, loginInput.value);
     // window.location.href = "quiz.html";
     document.getElementById("login").style.display = "none";
-    document.getElementById("login-welcome").style.display = "initial";
+    document.getElementById("login-welcome").style.display = "block";
     document.getElementById("welcome-name").innerHTML =
       "Welcome " + localStorage.getItem(`username ${loginInput.value}`);
   }
@@ -73,7 +61,7 @@ loginForm.addEventListener("submit", function (e) {
   ) {
     // window.location.href = "quiz.html";
     document.getElementById("login").style.display = "none";
-    document.getElementById("login-welcome").style.display = "initial";
+    document.getElementById("login-welcome").style.display = "block";
     document.getElementById("welcome-name").innerHTML =
       "Welcome " + localStorage.getItem(`username ${loginInput.value}`);
   } else {

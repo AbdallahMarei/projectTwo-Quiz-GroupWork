@@ -298,8 +298,10 @@ footer .icons a:hover i {
 }
 #login-welcome {
   font-size: 4rem;
-  padding: 30% 0;
+  padding: 30% 10%;
   display: none;
+  color: #444;
+  font-family: "Times New Roman", Times, serif;
 }
 #login-welcome a {
   text-align: center;
