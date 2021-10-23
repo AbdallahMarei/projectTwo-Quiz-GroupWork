@@ -74,7 +74,6 @@
     let questionsObject = [];
     let currentQuestion = 0;
     let currentAnswerNumber = -1;
-
     defineQuizJson();
 
     function defineQuizJson() {
@@ -102,7 +101,10 @@
       let container = document.getElementById("question-container");
       container.innerHTML = "";
 
+      currentAnswerNumber = -1;
+
       if (currentQuestion < questionsObject.length) {
+        // generate the question.
         console.log(questionsObject[currentQuestion].question);
         let divQuestion = document.createElement("div");
         divQuestion.classList.add("question-div");
@@ -118,7 +120,6 @@
         ) {
           const element = questionsObject[currentQuestion].options[index];
           let radio = document.createElement("input");
-
           radio.setAttribute("type", "radio");
           radio.setAttribute("name", "option");
           radio.setAttribute("data-optionvalue", element.number);
@@ -146,10 +147,12 @@
       document
         .getElementById("validationMessage")
         .setAttribute("hidden", "true");
+
       console.log(
         "question answered" +
           event.currentTarget.getAttribute("data-optionvalue")
       );
+
       currentAnswerNumber =
         event.currentTarget.getAttribute("data-optionvalue");
     }
@@ -157,11 +160,16 @@
     function submitAnswers() {
       console.log("all questions answered");
       console.log(answersArray);
+
       localStorage.setItem("answers", JSON.stringify(answersArray));
+
+      window.location.href = "results.html";
     }
+
     function GotToNextStep() {
       if (currentAnswerNumber >= 0) {
         AddToAnswersArray();
+
         generateNextQuestion();
       } else {
         document.getElementById("validationMessage").removeAttribute("hidden");
@@ -169,10 +177,22 @@
     }
 
     let answersArray = [];
+
+    // store the answer value to array
     function AddToAnswersArray() {
-      // if (radio.checked) {
-      //   answersArray.push("this.radio");
-      // }
+      let lastAnswerQuestionIndex = currentQuestion - 1;
+      let answerObject = {
+        questionNumber: currentQuestion,
+        correctAnswer: questionsObject[lastAnswerQuestionIndex].correctAnswer,
+        userAnswer: currentAnswerNumber,
+      };
+      console.log(answerObject);
+      // add the json to the array.
+      answersArray.push(answerObject);
     }
   </script>
 </html>
+<!--  let answersArray= localStorage.getItem("answers");
+JSON.parse(answersArray); -->
+<!-- 
+JSON.parse(localStorage.getItem("answers")); -->
