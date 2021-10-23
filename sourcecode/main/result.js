@@ -48,6 +48,7 @@ function myResults() {
 
 let resultsTable = document.querySelector(".results-table")
 function showAnswers() {
+  if(resultsTable.innerHTML = " "){
   let userAnswers = JSON.parse(localStorage.getItem("answers"));
   console.log(userAnswers);
   console.log(questionArray);
@@ -70,4 +71,5 @@ function showAnswers() {
     }
    
   }
+}
 }
