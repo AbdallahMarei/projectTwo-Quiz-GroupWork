@@ -12,9 +12,6 @@ let loginForm = document.querySelector(".form-login");
 let loginButton = document.getElementById("login-btn");
 let loginInput = document.querySelector(".login-username");
 
-
-
-
 let users = [];
 
 function validated(event) {
@@ -49,27 +46,30 @@ function validated(event) {
   }
   if (isValid == true) {
     //object contains the username and password given from the register form
-    let obj ={"username" : loginInput.value, "password" : password.value} 
+    let obj = { username: loginInput.value, password: password.value };
 
-    // saved the object in local storage as json because local storage can't save object 
-    localStorage.setItem(`data ${loginInput.value}`,JSON.stringify(obj)  ); 
+    // saved the object in local storage as json because local storage can't save object
+    localStorage.setItem(`data ${loginInput.value}`, JSON.stringify(obj));
 
     document.getElementById("login").style.display = "none";
-    document.getElementById("login-welcome").style.display = "initial";
+    document.getElementById("login-welcome").style.display = "block";
     document.getElementById("welcome-name").innerHTML =
-      "Welcome " +JSON.parse(localStorage.getItem(`data ${loginInput.value}`)).username; 
+      "Welcome " +
+      JSON.parse(localStorage.getItem(`data ${loginInput.value}`)).username;
   }
 }
 
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
   if (
-    JSON.stringify({"username" : loginInput.value, "password" : password.value})=== localStorage.getItem(`data ${loginInput.value}`)
+    JSON.stringify({ username: loginInput.value, password: password.value }) ===
+    localStorage.getItem(`data ${loginInput.value}`)
   ) {
     document.getElementById("login").style.display = "none";
-    document.getElementById("login-welcome").style.display = "initial";
+    document.getElementById("login-welcome").style.display = "block";
     document.getElementById("welcome-name").innerHTML =
-      "Welcome " +JSON.parse(localStorage.getItem(`data ${loginInput.value}`)).username ;
+      "Welcome " +
+      JSON.parse(localStorage.getItem(`data ${loginInput.value}`)).username;
   } else {
     alert(" Username or Password incorrect");
   }
