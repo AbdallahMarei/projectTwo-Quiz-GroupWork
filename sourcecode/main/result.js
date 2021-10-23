@@ -42,3 +42,4 @@ function myResults() {
     document.getElementById("btnShowAnswer").style.display = "block";
   }
 }
+function showAnswers() {}
