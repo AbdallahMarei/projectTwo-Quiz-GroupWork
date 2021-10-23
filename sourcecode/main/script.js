@@ -45,26 +45,32 @@ function validated(event) {
     confirmPassword.style.border = "1px solid silver";
   }
   if (isValid == true) {
-    localStorage.setItem(`username ${loginInput.value}`, loginInput.value);
-    // window.location.href = "quiz.html";
+    //object contains the username and password given from the register form
+    let obj = { username: loginInput.value, password: password.value };
+
+    // saved the object in local storage as json because local storage can't save object
+    localStorage.setItem(`data ${loginInput.value}`, JSON.stringify(obj));
+
     document.getElementById("login").style.display = "none";
     document.getElementById("login-welcome").style.display = "block";
     document.getElementById("welcome-name").innerHTML =
-      "Welcome " + localStorage.getItem(`username ${loginInput.value}`);
+      "Welcome " +
+      JSON.parse(localStorage.getItem(`data ${loginInput.value}`)).username;
   }
 }
 
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
   if (
-    loginInput.value === localStorage.getItem(`username ${loginInput.value}`)
+    JSON.stringify({ username: loginInput.value, password: password.value }) ===
+    localStorage.getItem(`data ${loginInput.value}`)
   ) {
-    // window.location.href = "quiz.html";
     document.getElementById("login").style.display = "none";
     document.getElementById("login-welcome").style.display = "block";
     document.getElementById("welcome-name").innerHTML =
-      "Welcome " + localStorage.getItem(`username ${loginInput.value}`);
+      "Welcome " +
+      JSON.parse(localStorage.getItem(`data ${loginInput.value}`)).username;
   } else {
-    alert("this username is not found, please register");
+    alert(" Username or Password incorrect");
   }
 });

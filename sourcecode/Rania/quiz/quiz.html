@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="quizQuestions.json"></script>
+   
     <style>
       .question-div {
         font-weight: bold;
@@ -158,18 +158,13 @@
     }
 
     function submitAnswers() {
-      console.log("all questions answered");
-      console.log(answersArray);
-
       localStorage.setItem("answers", JSON.stringify(answersArray));
-
       window.location.href = "results.html";
     }
 
     function GotToNextStep() {
       if (currentAnswerNumber >= 0) {
         AddToAnswersArray();
-
         generateNextQuestion();
       } else {
         document.getElementById("validationMessage").removeAttribute("hidden");
@@ -178,21 +173,14 @@
 
     let answersArray = [];
 
-    // store the answer value to array
     function AddToAnswersArray() {
       let lastAnswerQuestionIndex = currentQuestion - 1;
       let answerObject = {
-        questionNumber: currentQuestion,
+        questionIndex: lastAnswerQuestionIndex,
         correctAnswer: questionsObject[lastAnswerQuestionIndex].correctAnswer,
         userAnswer: currentAnswerNumber,
       };
-      console.log(answerObject);
-      // add the json to the array.
       answersArray.push(answerObject);
     }
   </script>
 </html>
-<!--  let answersArray= localStorage.getItem("answers");
-JSON.parse(answersArray); -->
-<!-- 
-JSON.parse(localStorage.getItem("answers")); -->
