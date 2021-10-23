@@ -1,5 +1,6 @@
 let questionArray = [];
-defineQuizJson();
+
+defineQuizJson()
 function defineQuizJson() {
   var httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
@@ -13,6 +14,8 @@ function defineQuizJson() {
   httpRequest.open("GET", "quizQuestions.json");
   httpRequest.send();
 }
+
+
 myResults();
 function myResults() {
   let answersArray = localStorage.getItem("answers");
@@ -42,4 +45,29 @@ function myResults() {
     document.getElementById("btnShowAnswer").style.display = "block";
   }
 }
-function showAnswers() {}
+
+let resultsTable = document.querySelector(".results-table")
+function showAnswers() {
+  let userAnswers = JSON.parse(localStorage.getItem("answers"));
+  console.log(userAnswers);
+  console.log(questionArray);
+  for(let i = 0 ; i < questionArray.length ; i++){
+    let optionsArray = questionArray[i].options;
+    let tr = document.createElement("tr");
+    let td1 = document.createElement("td");
+    let td2 = document.createElement("td");
+    tr.appendChild(td1)
+    tr.appendChild(td2)
+    resultsTable.appendChild(tr)
+    if(userAnswers[i].correctAnswer === Number(userAnswers[i].userAnswer)){
+      td1.innerHTML = questionArray[i].question;
+      td2.innerHTML = optionsArray[userAnswers[i].userAnswer - 1].value;
+      td2.style.color = "green";
+    }else {
+      td1.innerHTML = questionArray[i].question;
+      td2.innerHTML = optionsArray[userAnswers[i].userAnswer - 1].value;
+      td2.style.color = "red";
+    }
+   
+  }
+}
