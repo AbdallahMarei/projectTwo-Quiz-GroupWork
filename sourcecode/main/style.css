@@ -542,11 +542,13 @@ div#question-container {
     width: unset;
     height: unset;
   }
-  .register {
-    height: unset;
-  }
   .login1-section {
     width: unset;
+  }
+}
+@media screen and (max-width: 560px) {
+  .register {
+    display: block;
   }
 }
 @media screen and (max-width: 320px) {
