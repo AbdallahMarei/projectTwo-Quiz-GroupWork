@@ -82,7 +82,6 @@ nav .active a {
   align-items: center;
 }
 
-
 .about-dist {
   padding: 1em 7em;
   display: grid;
@@ -302,6 +301,9 @@ footer .icons a:hover i {
   display: none;
   color: #444;
   font-family: "Times New Roman", Times, serif;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 #login-welcome a {
   text-align: center;
@@ -467,7 +469,7 @@ div#question-container {
 }
 
 /* media Queries */
-@media  screen and (max-width:400px) {
+@media screen and (max-width: 400px) {
   .about-dist {
     padding: 1em 6em;
     display: grid;
