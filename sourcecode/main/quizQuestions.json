@@ -28,12 +28,12 @@
   },
   {
     "question":
-      "Question  4 : In JavaScript, what is a block of statement? ",
+      "Question  4 : Which built-in method returns the calling string value converted to upper case? ",
     "options": [
-      { "number": 1, "value": "Block that combines a number of statements into a single compound statement" },
-      { "number": 2, "value": "Conditional block" },
-      { "number": 3, "value": "Both conditional block and a single statement" },
-      { "number": 4, "value": "Block that contains a single statement" }  
+      { "number": 1, "value": " toUpperCase()" },
+      { "number": 2, "value": "toUpper()" },
+      { "number": 3, "value": "changeCase(case)" },
+      { "number": 4, "value": "None of the above." }  
     ],
     "correctAnswer": 1 
   },
