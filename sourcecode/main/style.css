@@ -16,6 +16,7 @@ html {
 
 /* Header */
 
+
 nav {
   position: sticky !important;
   padding-right: 5rem !important;
@@ -74,22 +75,37 @@ nav .active a {
 
 /* about */
 
+#about-section{
+  
+}
 #title-about {
-  display: flex;
   text-align: center;
-  justify-content: center;
-  justify-content: space-evenly;
-  align-items: center;
+  padding-top: 2rem;
 }
 
 .about-dist {
-  padding: 1em 7em;
-  display: grid;
-  font-size: large;
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: space-between;
-  gap: 4em;
-  height: 50vh;
+  font-size: 2rem;
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.about-dist div{
+  padding: 3rem 0;
+  text-align: center;
+}
+.about-dist button{
+    margin: 2rem 0;
+    font-size: 1.4rem;
+  background-color: #3ec1d5;
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  border: none;
+}
+.about-dist button:hover{
+  background-color: #38a9bb;
 }
 
 /* contact me */
@@ -469,17 +485,7 @@ div#question-container {
 }
 
 /* media Queries */
-@media screen and (max-width: 400px) {
-  .about-dist {
-    padding: 1em 6em;
-    display: grid;
-    font-size: medium;
-    grid-template-rows: repeat(2, 1fr);
-    justify-content: space-between;
-    gap: 2em;
-    height: 50vh;
-  }
-}
+
 @media (max-width: 850px) {
   .contactme-container {
     flex-direction: column;
