@@ -47,6 +47,8 @@ function myResults() {
 let resultsTable = document.querySelector(".results-table")
 function showAnswers() {
   document.getElementById("btnShowAnswer").style.display="none"
+  document.querySelector(".result-cont").style.height = "130vh"
+  document.querySelector(".result").style.height = "110vh"
   if(resultsTable.innerHTML = " "){
   let userAnswers = JSON.parse(localStorage.getItem("answers"));
   console.log(userAnswers);
