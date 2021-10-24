@@ -56,7 +56,7 @@ function validated(event) {
     localStorage.setItem(`data ${loginInput.value}`, JSON.stringify(obj));
 
     document.getElementById("login").style.display = "none";
-    document.getElementById("login-welcome").style.display = "block";
+    document.getElementById("login-welcome").style.display = "flex";
     document.getElementById("welcome-name").innerHTML =
       "Welcome " +
       JSON.parse(localStorage.getItem(`data ${loginInput.value}`)).username;
@@ -70,7 +70,8 @@ loginForm.addEventListener("submit", function (e) {
     localStorage.getItem(`data ${loginInput.value}`)
   ) {
     document.getElementById("login").style.display = "none";
-    document.getElementById("login-welcome").style.display = "block";
+    document.getElementById("login-welcome").style.display = "flex";
+    // document.getElementsByClassName("login-section")[0].style.height = "50vh";
     document.getElementById("welcome-name").innerHTML =
       "Welcome " +
       JSON.parse(localStorage.getItem(`data ${loginInput.value}`)).username;
