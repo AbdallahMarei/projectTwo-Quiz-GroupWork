@@ -466,6 +466,7 @@ div#question-container {
   font-size: 1.3rem;
 }
 #btnShowAnswer {
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
