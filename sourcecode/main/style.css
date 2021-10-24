@@ -82,17 +82,15 @@ nav .active a {
   align-items: center;
 }
 
-#img {
-  width: 45em;
-  height: 35em;
-}
 
 .about-dist {
   padding: 1em 7em;
   display: grid;
+  font-size: large;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
   gap: 4em;
+  height: 50vh;
 }
 
 /* contact me */
@@ -469,7 +467,17 @@ div#question-container {
 }
 
 /* media Queries */
-
+@media  screen and (max-width:400px) {
+  .about-dist {
+    padding: 1em 6em;
+    display: grid;
+    font-size: medium;
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: space-between;
+    gap: 2em;
+    height: 50vh;
+  }
+}
 @media (max-width: 850px) {
   .contactme-container {
     flex-direction: column;
