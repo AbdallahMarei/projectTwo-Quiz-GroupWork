@@ -467,12 +467,15 @@ div#question-container {
 }
 
 /* media Queries */
-@media  screen and (max-width:400px) {
+@media  screen and (max-width:500px) {
   .about-dist {
-    padding: 1em 6em;
+    padding: 1em 4em;
     display: grid;
     font-size: medium;
-    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: auto ;
     justify-content: space-between;
     gap: 2em;
     height: 50vh;

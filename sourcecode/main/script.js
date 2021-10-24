@@ -2,6 +2,7 @@ let password = document.querySelector("#login-pass");
 let confirmPassword = document.getElementById("passwordConfirm");
 let email = document.querySelector(".email-input");
 let isValid = true;
+let check="1";
 let welcomeHeading = document.getElementById("welcome-user");
 let loginInput_error = document.querySelector("#username_error");
 let email_error = document.querySelector("#email_error");
@@ -50,9 +51,10 @@ function validated(event) {
     isValid = true
   }
   if (isValid == true) {
+    check="1";
     //object contains the username and password given from the register form
     let obj = { username: loginInput.value, password: password.value };
-
+    
     // saved the object in local storage as json because local storage can't save object
     localStorage.setItem(`data ${loginInput.value}`, JSON.stringify(obj));
 
