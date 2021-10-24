@@ -370,13 +370,16 @@ footer .icons a:hover i {
 .radio-container {
   font-size: 1em;
   font-weight: bold;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 4px;
   margin: 5px;
   background-color: #fff;
-  border-radius: 2rem;
+  border-radius: 0.8rem;
 }
 
+.radio-container input {
+  margin-right: 0.7em;
+}
 .next-button {
   font-weight: 500;
   font-size: 1.5rem;
@@ -411,6 +414,9 @@ div#question-container {
 
 .validation-message {
   color: red;
+  font-size: 1.3em;
+  margin-left: 2.5em;
+  font-weight: 600;
 }
 
 /* result page */
@@ -483,24 +489,6 @@ div#question-container {
 }
 
 /* media Queries */
-<<<<<<< HEAD
-@media  screen and (max-width:500px) {
-  .about-dist {
-    padding: 1em 4em;
-    display: grid;
-    font-size: medium;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    grid-template-columns: auto ;
-    justify-content: space-between;
-    gap: 2em;
-    height: 50vh;
-  }
-}
-=======
-
->>>>>>> cdad62cbce38c4b119ca59cf59236999b71da7bf
 @media (max-width: 850px) {
   .contactme-container {
     flex-direction: column;
