@@ -21,10 +21,6 @@ function defineQuizJson() {
 
 function startGenerateQuestions(data) {
   questionsObject = data;
-
-  // generateNextQuestion();
-  // const form = document.getElementById("form");
-  // form.addEventListener("submit", logSubmit);
   generateNextQuestion();
 }
 
