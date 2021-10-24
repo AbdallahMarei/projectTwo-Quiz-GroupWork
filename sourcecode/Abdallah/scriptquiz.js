@@ -11,7 +11,6 @@ function defineQuizJson() {
         let data = JSON.parse(httpRequest.responseText);
 
         startGenerateQuestions(data);
-        generateNextQuestion();
       }
     }
   };
@@ -21,27 +20,9 @@ function defineQuizJson() {
 
 function startGenerateQuestions(data) {
   questionsObject = data;
+
   generateNextQuestion();
 }
-
-// function logSubmit(event) {
-//   for (let i = 0; i < questionsObject.length; i++) {
-//     if (currentQuestion == i) {
-//       document.getElementById("Question").innerHTML =
-//         questionsObject[currentQuestion].question;
-//       document.getElementById("one").innerHTML =
-//         questionsObject[currentQuestion].options[0].value;
-//       document.getElementById("two").innerHTML =
-//         questionsObject[currentQuestion].options[1].value;
-//       document.getElementById("three").innerHTML =
-//         questionsObject[currentQuestion].options[2];
-//       document.getElementById("four").innerHTML =
-//         questionsObject[currentQuestion].options[3];
-//     }
-//   }
-//   currentQuestion++;
-//   event.preventDefault();
-// }
 
 function generateNextQuestion() {
   let container = document.getElementById("question-container");

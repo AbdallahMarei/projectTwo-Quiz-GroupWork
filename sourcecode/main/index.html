@@ -19,7 +19,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
 
     <title>Quiz Website</title>
@@ -27,7 +26,9 @@
   <body>
     <header id="header">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><img src="images/logo.png" /></a>
+        <a class="navbar-brand" href="index.html"
+          ><img src="images/logo.png"
+        /></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -40,12 +41,12 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav ml-auto navbar-links">
+          <ul class="navbar-nav ml navbar-links">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home </a>
+              <a class="nav-link" href="#background">Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#about-section">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
@@ -77,16 +78,26 @@
         </div>
       </section>
       <!-- About section -->
-      <section class="about">
+      <section class="about" id="about-section">
         <div>
-          <h2 id="title-about"><strong>About Echo</strong></h2>
+          <h2 id="title-about"><strong>About eCho Quiz</strong></h2>
           <div class="about-dist">
             <div>
-              We are echo company can provide many services to you in IT world,maybe you know it items control our life around over the worldy, so you can imagine how is important to you
+              eCho provides a quiz that consists of six questions to evaluate
+              talented individuals who want to join our company. All the
+              questions are IT based so you should feel right at home.
             </div>
             <div>
-              We are echo company can provide many services to you in IT world,maybe you know it items control our life around over the worldy, so you can imagine how is important to you
+              Click on the button below to take a quiz similar to ours, this
+              quiz will train you and score you the job you always wanted with
+              us.
             </div>
+            <a
+              href="https://tutorialslink.com/mcq-quiz/java-script-mcq-quiz-multiple-choice-questions-and-answers"
+              ><button type="button" class="btn btn-primary">
+                <strong>Check Similar Quiz</strong>
+              </button></a
+            >
           </div>
         </div>
       </section>
@@ -147,8 +158,8 @@
     <footer>
       <div class="footer-links">
         <ul>
-          <li><a href="#header">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#background">Home</a></li>
+          <li><a href="#about-section">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>

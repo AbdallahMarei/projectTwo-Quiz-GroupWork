@@ -20,35 +20,34 @@ function validated(event) {
   if (loginInput.value.length < 3) {
     loginInput_error.style.display = "block";
     loginInput.style.border = "1px solid red";
-
   } else {
     loginInput_error.style.display = "none";
     loginInput.style.border = "1px solid silver";
-   
   }
 
   if (password.value.length < 6) {
     pass_error.style.display = "block";
     password.style.border = "1px solid red";
- 
   } else {
     pass_error.style.display = "none";
     password.style.border = "1px solid silver";
-   
   }
 
   if (confirmPassword.value !== password.value) {
     confirm_error.style.display = "block";
     confirmPassword.style.border = "1px solid red";
-   
   } else {
     confirm_error.style.display = "none";
     confirmPassword.style.border = "1px solid silver";
   }
-  if(confirmPassword.value !== password.value || password.value.length < 6 ||loginInput.value.length < 3){
-    isValid = false
-  }else{
-    isValid = true
+  if (
+    confirmPassword.value !== password.value ||
+    password.value.length < 6 ||
+    loginInput.value.length < 3
+  ) {
+    isValid = false;
+  } else {
+    isValid = true;
   }
   if (isValid == true) {
     check="1";
@@ -59,7 +58,7 @@ function validated(event) {
     localStorage.setItem(`data ${loginInput.value}`, JSON.stringify(obj));
 
     document.getElementById("login").style.display = "none";
-    document.getElementById("login-welcome").style.display = "block";
+    document.getElementById("login-welcome").style.display = "flex";
     document.getElementById("welcome-name").innerHTML =
       "Welcome " +
       JSON.parse(localStorage.getItem(`data ${loginInput.value}`)).username;
@@ -73,7 +72,8 @@ loginForm.addEventListener("submit", function (e) {
     localStorage.getItem(`data ${loginInput.value}`)
   ) {
     document.getElementById("login").style.display = "none";
-    document.getElementById("login-welcome").style.display = "block";
+    document.getElementById("login-welcome").style.display = "flex";
+    // document.getElementsByClassName("login-section")[0].style.height = "50vh";
     document.getElementById("welcome-name").innerHTML =
       "Welcome " +
       JSON.parse(localStorage.getItem(`data ${loginInput.value}`)).username;

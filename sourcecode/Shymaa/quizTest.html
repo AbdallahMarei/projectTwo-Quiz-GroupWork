@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      body {
+        margin: 5em;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" method="get" id="form">
+      <h2 id="Question">Test Question</h2>
+      <label id="one" for="a">test</label><input type="radio" name="Q" id="a" />
+      <label id="two" for="b">test</label>
+      <input type="radio" name="Q" id="b" />
+      <label id="three" for="c">test</label>
+      <input type="radio" name="Q" required id="c" />
+      <label id="four" for="d">test</label>
+      <input type="radio" name="Q" id="d" />
+      <input type="submit" value="next" />
+    </form>
+    <p id="one"></p>
+
+    <script>
+      //send answer with id parameter from radio to script
+      let arr = [
+        { name: "Question one", A1: "A", A2: "B", A3: "f", A4: "t" },
+        { name: "Question Two", A1: "B", A2: "dsc", A3: "cc", A4: "t" },
+        { name: "Question three", A1: "B", A2: "B", A4: "t" },
+      ];
+      // let answers = [];
+
+      let questionNumber = 0;
+      function logSubmit(event) {
+        for (let i = 0; i < arr.length; i++) {
+          if (questionNumber == i) {
+            document.getElementById("Question").innerHTML = arr[i].name;
+            document.getElementById("one").innerHTML = arr[i].A1;
+            document.getElementById("two").innerHTML = arr[i].A2;
+            document.getElementById("three").innerHTML = arr[i].A3;
+            document.getElementById("four").innerHTML = arr[i].A4;
+          }
+        }
+        questionNumber++;
+        event.preventDefault();
+      }
+
+      const form = document.getElementById("form");
+      const log = document.getElementById("log");
+      form.addEventListener("submit", logSubmit);
+    </script>
+
+    <script src="tesdt.js"></script>
+  </body>
+</html>
