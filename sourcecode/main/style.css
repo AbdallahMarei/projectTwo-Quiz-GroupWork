@@ -16,7 +16,6 @@ html {
 
 /* Header */
 
-
 nav {
   position: sticky !important;
   padding-right: 5rem !important;
@@ -89,19 +88,19 @@ nav .active a {
   align-items: center;
   flex-direction: column;
 }
-.about-dist div{
+.about-dist div {
   padding: 3rem 0;
   text-align: center;
 }
-.about-dist button{
-    margin: 2rem 0;
-    font-size: 1.4rem;
+.about-dist button {
+  margin: 2rem 0;
+  font-size: 1.4rem;
   background-color: #3ec1d5;
   border-radius: 20px;
   padding: 1rem 2rem;
   border: none;
 }
-.about-dist button:hover{
+.about-dist button:hover {
   background-color: #38a9bb;
 }
 
@@ -543,11 +542,13 @@ div#question-container {
     width: unset;
     height: unset;
   }
-  .register {
-    height: unset;
-  }
   .login1-section {
     width: unset;
+  }
+}
+@media screen and (max-width: 560px) {
+  .register {
+    display: block;
   }
 }
 @media screen and (max-width: 320px) {
