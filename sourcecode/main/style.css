@@ -542,4 +542,18 @@ div#question-container {
   h2 {
     font-size: 2.9rem;
   }
+  .question-section {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .question-section {
+    width: 80%;
+  }
+  .login-section {
+    margin: 10px;
+  }
+  h2 {
+    font-size: 2.9rem;
+  }
 }
